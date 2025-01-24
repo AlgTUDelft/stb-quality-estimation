@@ -1,0 +1,28 @@
+﻿Abbr;;Original;;Translate;
+ST-8C6;;Substraattemperatuur Arabella Vers (goot 6 bak 5) (8C6) - Temperature (°C) - averages;;Substrate temperature Arabella Fresh (trough 6 tray 5) (8C6) - Temperature (°C) - averages;
+ST-8C3;;Substraattemperatuur Arabella vers (goot 4 bak 5) (8C3) - Temperature (°C) - averages;;Substrate temperature Arabella fresh (trough 4 tray 5) (8C3) - Temperature (°C) - averages;
+ST-A19;;Substraattemperatuur - Arabella vers (Goot 5 bak 5) (A19) - Temperature (°C) - averages;;Substrate temperature - Arabella fresh (Gutter 5 tray 5) (A19) - Temperature (°C) - averages;from soil
+LT;;Plant bladtemperatuur °C (afd. 03.4) - Temperature (°C) - averages;;Plant leaf temperature °C (div. 03.4) - Temperature (°C) - averages;
+PT-4DB;;Planttemperatuur Arabella Vers Goot 4 (4DB) - Surface temperature (°C) - averages;;Plant temperature Arabella Fresh Gutter 4 (4DB) - Surface temperature (°C) - averages;
+PT-919;;Planttemperatuur Arabella Goot 6 (919) - Surface temperature (°C) - averages;;Plant temperature Arabella Gutter 6 (919) - Surface temperature (°C) - averages;
+rain;;regen (1=nat, 0=droog) - Boolean 0/1 (number) - averages;;rain (1=wet,  0=dry) - Boolean 0/1 (number) - averages;
+cycle-exp;;Cyclische belichting 3.4 - % (%) - averages;;Cyclic exposure 3.4 - % (%) - averages;
+water-PH;;watergift - pH  (afd 03.4) - pH (pH) - averages;;watering - pH  (dept 03.4) - pH (pH) - averages;
+outdoor-RH;;buiten RV - % - Humidity (%) - averages;;outside RH - % - Humidity (%) - averages;
+AH;;absoluut vochtgehalte buitenlucht - g/m³ - Absolute humidity (g/kg) - averages;;absolute humidity outside air - g/m³ - Absolute humidity (g/kg) - averages;
+exp;;belichting: aan  (afd 03.4) - Percentage (%) - averages;;exposure: on  (dept 03.4) - Percent (%) - averages;
+outdoor-PAR;;Outside PAR-sensor - PAR (μmol m−2 s−1) - averages;;Outside PAR sensor - PAR (μmol m−2 s−1) - averages;
+VT;;ventilatietemp: ber  - °C  (afd 03.4) - Temperature (°C) - averages;;ventilation temp: ber  - °C  (dept 03.4) - Temperature (°C) - averages;
+sensor-PAR;;PAR-sensor (afd. 3.4) - PAR (μmol m−2 s−1) - averages;;PAR sensor (dept. 3.4) - PAR (μmol m−2 s−1) - averages;
+PAR-055;;3.4 PAR Goot 3 (055) - PAR (μmol m−2 s−1) - averages;;3.4 PAR Gutter 3 (055) - PAR (μmol m−2 s−1) - averages;
+net-Rad;;Netto stralingsmeter (Afd 3.4) - Radiation (W/m2) - averages;;Net radiation meter (Division 3.4) - Radiation (W/m2) - averages;
+water;;watergift - l/m²  (afd 03.4) - Irrigation per square meter (l/m2) - averages;;irrigation - l/m²  (dept 03.4) - Irrigation per square meter (l/m2) - averages;
+LT-B5D;;Multilayer Tower 1 table 3 - Leaf Temp (B5D) - Surface temperature (°C) - averages;;Multilayer Tower 1 table 3 - Leaf Temp (B5D) - Surface temperature (°C) - averages;
+outdoor-T;;buitentemperatuur - °C - Temperature (°C) - averages;;outdoor temperature - °C - Temperature (°C) - averages;
+RH;;RV kas - %  (afd 03.4) - Humidity (%) - averages;;RH cash - %  (dept 03.4) - Humidity (%) - averages;
+CO2;;CO2 kas - ppm  (afd 03.4) - CO2 (ppm) - averages;;CO2 greenhouse - ppm  (dept 03.4) - CO2 (ppm) - averages;
+GT;;kastemperatuur - °C  (afd 03.4) - Temperature (°C) - averages;;greenhouse temperature - °C  (dept 03.4) - Temperature (°C) - averages;
+PT-C8F;;Planttemperatuur goot 5 (Arabella Vers) (C8F) - Surface temperature (°C) - averages;;Plant temperature gutter 5 (Arabella Fresh) (C8F) - Surface temperature (°C) - averages;
+MM;;MM;;MM;
+DD;;DD;;DD;
+hh;;hh;;hh;

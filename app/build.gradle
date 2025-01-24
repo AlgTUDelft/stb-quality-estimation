@@ -1,0 +1,138 @@
+plugins {
+    id 'checkstyle'
+    id 'com.android.application'
+    id 'pmd'
+}
+
+apply plugin: 'jacoco'
+
+android {
+    namespace 'com.example.fruitqualityprediction'
+    compileSdk 33
+    buildFeatures {
+        buildConfig true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "ADVANCED_KEY", "\"${ADVANCED_KEY}\"")
+        }
+
+        release {
+            buildConfigField("String", "ADVANCED_KEY", "\"${ADVANCED_KEY}\"")
+        }
+    }
+
+
+    defaultConfig {
+        applicationId "com.example.fruitqualityprediction"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            testCoverageEnabled true
+        }
+    }
+
+    afterEvaluate {
+        tasks.withType(Test) {
+            jacoco {
+                excludes = ['com/example/fruitqualityprediction/**/*']
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding true
+        mlModelBinding true
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues true
+        unitTests {
+            includeAndroidResources = true
+
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/mockito-extensions/org.mockito.plugins.MockMaker'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(path: ':openCV')
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
+    implementation group: 'org.mariuszgromada.math', name: 'MathParser.org-mXparser', version: '5.2.1'
+    implementation 'androidx.test:rules:1.5.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
+//    androidTestImplementation 'net.bytebuddy:byte-buddy-agent:1.10.19'
+//    androidTestImplementation 'org.mockito:mockito-inline:2.13.0'
+    androidTestImplementation group: 'org.mockito', name: 'mockito-android', version: '5.3.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    def camerax_version = "1.2.2"
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-video:${camerax_version}"
+
+    implementation "androidx.camera:camera-view:${camerax_version}"
+    implementation "androidx.camera:camera-extensions:${camerax_version}"
+
+    implementation 'com.microsoft.onnxruntime:onnxruntime-android:1.14.0'
+
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
+
+checkstyle {
+    toolVersion '10.12.0'
+}
+
+pmd {
+    toolVersion = "6.21.0"
+}
+
+task checkstyle(type: Checkstyle) {
+    configFile file("${project.rootDir}/app/config/checkstyle/checkstyle.xml")
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    classpath = files()
+}
+
+
+task pmd(type: Pmd) {
+    ignoreFailures = false
+    source = fileTree('src/main/java').include('*/.java')
+    reports {
+        xml.destination = file("${project.buildDir}/reports/pmd/pmd.xml")
+        html.destination = file("${project.buildDir}/reports/pmd/pmd.html")
+    }
+}

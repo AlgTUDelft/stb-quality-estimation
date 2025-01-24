@@ -1,0 +1,1 @@
+In each folder, a different image is tested. For each image, processing is attempted. For each successful segmentation, and for each successful opening of a dialog after a click on the bounding box, the results are shown.

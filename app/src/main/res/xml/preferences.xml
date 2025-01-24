@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="processing_category"
+        android:title="Processing">
+
+        <DropDownPreference
+            android:key="seg_model"
+            android:title="Segmentation model"
+            android:summary="%s"
+            android:entries="@array/all_seg_models"
+            android:entryValues="@array/all_seg_models"
+            android:defaultValue="Color-Segmentation" />
+
+<!--        <ListPreference-->
+<!--            android:key="target_ripeness"-->
+<!--            android:title="Target ripeness percentage"-->
+<!--            android:summary="Select the target ripeness percentage for strawberries. The chosen value represents what you consider fully ripe"-->
+<!--            android:entries="@array/ripeness_entries"-->
+<!--            android:entryValues="@array/ripeness_values"-->
+<!--            android:defaultValue="100"-->
+<!--           />-->
+
+        <com.example.fruitqualityprediction.settingsadapters.PercentagePreference
+            android:key="percentage_preference"
+            android:title="Target ripeness percentage"
+            />
+
+        <DropDownPreference
+            android:key="bounding_box_color"
+            android:title="Bounding box color indicator"
+            android:summary="%s"
+            android:entries="@array/bounding_box_color_options"
+            android:entryValues="@array/bounding_box_color_options"
+            android:defaultValue="Ripeness" />
+
+        <SwitchPreferenceCompat
+            android:key="text_visibility"
+            android:title="Show Attributes"
+            android:summary="Toggle the visibility of attributes over bounding boxes" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="visualisation_category"
+        android:title="Visualisation">
+
+        <EditTextPreference
+            android:key="ripeness_function"
+            android:title="Ripeness function"
+            app:useSimpleSummaryProvider="true"
+            android:dialogTitle="F(x) = "
+            android:defaultValue="1/(1+e^(-x+5))"
+            android:inputType="text" />
+
+        <EditTextPreference
+            android:key="ripeness_minimum"
+            android:title="Lower bound for displayed ripeness values"
+            app:useSimpleSummaryProvider="true"
+            android:dialogTitle="Ripeness Minimum"
+            android:defaultValue="0"
+            android:inputType="number"
+            android:digits="0123456789" />
+
+        <EditTextPreference
+            android:key="ripeness_maximum"
+            android:title="Upper bound for displayed ripeness values"
+            app:useSimpleSummaryProvider="true"
+            android:dialogTitle="Ripeness Maximum"
+            android:defaultValue="1"
+            android:inputType="number"
+            android:digits="0123456789" />
+
+        <EditTextPreference
+            android:key="time_minimum"
+            android:title="Lower bound for displayed time values"
+            app:useSimpleSummaryProvider="true"
+            android:dialogTitle="Time Minimum"
+            android:defaultValue="0"
+            android:inputType="number"
+            android:digits="0123456789" />
+
+        <EditTextPreference
+            android:key="time_maximum"
+            android:title="Upper bound for displayed time values"
+            app:useSimpleSummaryProvider="true"
+            android:dialogTitle="Time Maximum"
+            android:defaultValue="10"
+            android:inputType="number"
+            android:digits="0123456789" />
+
+        <DropDownPreference
+            android:key="time_unit"
+            android:title="Time units in which the function is calculated"
+            app:useSimpleSummaryProvider="true"
+            android:entries="@array/time_units"
+            android:entryValues="@array/time_units"
+            android:defaultValue="Weeks" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="models_category"
+        android:title="Models">
+
+        <EditTextPreference
+            android:key="excluded_brix_columns"
+            android:title="Excluded Brix Columns"
+            android:summary="Enter column indices to exclude from the brix weights file"
+            android:dialogTitle="Enter Excluded Columns"
+            android:defaultValue="0"
+            android:inputType="number" />
+        <EditTextPreference
+            android:key="excluded_firmness_columns"
+            android:title="Excluded Firmness Columns"
+            android:summary="Enter column indices to exclude from the firmness weights file"
+            android:dialogTitle="Enter Excluded Columns"
+            android:defaultValue="0"
+            android:inputType="number" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="reset_category"
+        android:title="Reset">
+
+        <!-- Button preference to reset to default settings -->
+        <Preference
+            android:key="reset_button"
+            android:title="Reset to Default Settings"
+            android:summary="Tap here to reset all settings to their default values"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:key="developer_key_category" android:title="Developer Key">
+        <Preference
+            android:key="enter_developer_key"
+            android:title="Enter Developer Key"
+            android:summary="Click here to enter your developer key"
+
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

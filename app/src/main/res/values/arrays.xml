@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="all_ar_frequencies">
+        <item>30/s</item>
+        <item>20/s</item>
+        <item>10/s</item>
+        <item>5/s</item>
+        <item>2/s</item>
+        <item>1/s</item>
+    </array>
+    <string-array name="ripeness_values">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="ripeness_entries">
+        <item>10%</item>
+        <item>20%</item>
+        <item>30%</item>
+        <item>40%</item>
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100%</item>
+    </string-array>
+    <array name="all_seg_models">
+        <item>Color-Segmentation</item>
+        <item>Roboflow</item>
+        <item>Remote-Color-Segmentation</item>
+        <item>Remote-YOLOX-Segmentation</item>
+    </array>
+    <string-array name="bounding_box_color_options">
+        <item>Ripeness</item>
+        <item>Brix</item>
+        <item>Marketability</item>
+        <item>Disabled</item>
+    </string-array>
+
+    <string-array name="percentage_options">
+        <item>30%|#420D09 </item>
+        <item>40%|#600F0B</item>
+        <item>50%|#600B04</item>
+        <item>60%|#710C04</item>
+        <item>70%|#791812</item>
+        <item>80%|#990F02</item>
+        <item>90%|#B80F0A</item>
+        <item>100%|#FF2400</item>
+    </string-array>
+
+    <array name="max_segment_options" translatable="false">
+        <!-- I know this sucks for detecting which option is actually selected, but using just integers
+        they are automatically converted to integers internally and crash the settings fragment. -->
+        <item>unlimited segments</item>
+        <item>10 segments</item>
+        <item>8 segments</item>
+        <item>6 segments</item>
+        <item>4 segments</item>
+        <item>2 segments</item>
+        <item>1 segment</item>
+    </array>
+
+    <string-array name="time_units">
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Months</item>
+    </string-array>
+</resources>
